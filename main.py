@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from query import query
 
-# from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.include_router(query.query_router)
