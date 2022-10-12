@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 from query import query
+from user import user
 
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.include_router(query.query_router)
+app.include_router(user.user_router)
 
 origins = [
     "https://querybox.wdc1a.ciocloud.nonprod.intranet.ibm.com",
