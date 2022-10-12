@@ -12,7 +12,7 @@ user_router = APIRouter(
     prefix="/user",
     tags=['User']
 )
-password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 WORD = re.compile(r"\w+")
 
