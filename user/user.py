@@ -130,7 +130,7 @@ class UserModel(BaseModel):
 @user_router.post("/create")
 def create_user(user : UserModel):
     # print(user)
-    conn.Test.Users.insert_one(dict(user))
+    conn.querybox.users.insert_one(dict(user))
     return {"message" : True}
 
 
@@ -143,7 +143,7 @@ async def get_expert(body : TagModel):
     my_query = {"skills":{ "$in" : list(tags)}}
     print(type(body.tags))
     sorting_order = [("experiance",pymongo.DESCENDING),("high",pymongo.DESCENDING),("mid",pymongo.DESCENDING),("low",pymongo.DESCENDING),("response_time",pymongo.ASCENDING)]
-    result = latest_usersEntity(conn.Test.Users.find(my_query).sort(sorting_order))
+    result = latest_usersEntity(conn.querybox.users.find(my_query).sort(sorting_order))
     print(len(result))
     new_result = []
     for idx in range(len(result)):
