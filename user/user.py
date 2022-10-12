@@ -1,7 +1,6 @@
 from fastapi import APIRouter,Depends
 from schemas.user_schema import latest_usersEntity
 from config.db import conn
-from passlib.context import CryptContext
 from pydantic import EmailStr,BaseModel
 import pymongo
 import re
