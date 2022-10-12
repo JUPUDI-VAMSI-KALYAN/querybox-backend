@@ -6,4 +6,4 @@ conn = MongoClient("mongodb://kalyan123:kalyan1234@cluster0.nipgpbz.mongodb.net/
 db = conn.querybox
 # for e in db["queries"].find():
 #     print(e)
-db.queries.database()
+# db.queries.database()
