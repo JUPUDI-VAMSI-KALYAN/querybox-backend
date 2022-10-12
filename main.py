@@ -6,18 +6,20 @@ from query import query
 app = FastAPI()
 app.include_router(query.query_router)
 
-# origins = [
-#     "http://localhost",
-#     "http://localhost:4200",
-#     "http://localhost:4200/"
-# ]
+origins = [
+    "https://querybox.wdc1a.ciocloud.nonprod.intranet.ibm.com",
+    "http://localhost",
+    "http://localhost:4200",
+    "http://localhost:4200/",
+    "https://querybox.wdc1a.ciocloud.nonprod.intranet.ibm.com/"
+]
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 print("Yes")
 import socket
 hostname=socket.gethostname()
