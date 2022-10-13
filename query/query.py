@@ -57,7 +57,7 @@ def all_query_stats():
 
 @query_router.get("/latest")
 def latest_queries():
-    result = conn.querybox.queries.find()
+    result = conn.querybox.queries.find().limit(50)
     return queriesEntity(result)
 
 class SkillsModel(BaseModel):
